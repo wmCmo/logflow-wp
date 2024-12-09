@@ -1,0 +1,45 @@
+html,
+body,
+#root {
+    height: 95vh;
+}
+
+body {
+    background-color: #202020;
+}
+
+img {
+    height: 130px;
+    width: auto;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-duration: 100ms;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 5em;
+}
+
+img,
+.container {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.up {
+    transform: translateY(1px);
+}
+
+.big {
+    transform: scale(1.1);
+}

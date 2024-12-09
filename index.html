@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogFlow Wallpaper</title>
+    <link rel="shortcut icon" href="./public/svg/6.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="root">
+        <div class="container">
+            <img src="./public/svg/1.svg" alt="code"><img src="./public/svg/2.svg" alt="capture"><img
+                src="./public/svg/3.svg" alt="organize"><img src="./public/svg/4.svg" alt="distill"><img
+                src="./public/svg/5.svg" alt="express"><img src="./public/svg/6.svg" alt="para"><img
+                src="./public/svg/7.svg" alt="projects"><img src="./public/svg/8.svg" alt="areas"><img
+                src="./public/svg/9.svg" alt="resources"><img src="./public/svg/10.svg" alt="archives"><img
+                src="./public/svg/11.svg" alt="fent"><img src="./public/svg/12.svg" alt="future-log"><img
+                src="./public/svg/13.svg" alt="events"><img src="./public/svg/14.svg" alt="notes"><img
+                src="./public/svg/15.svg" alt="tasks">
+        </div>
+    </div>
+
+    <style>
+        html,
+        body,
+        #root {
+            height: 95vh;
+        }
+
+        body {
+            background-color: #202020;
+        }
+
+        img {
+            height: 130px;
+            width: auto;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition-duration: 100ms;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            align-items: center;
+            gap: 5em;
+        }
+
+        img,
+        .container {
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .up {
+            transform: translateY(1px);
+        }
+
+        .big {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <script>
+        const icons = document.querySelectorAll('img');
+
+        const mouseLeave = (icon) => {
+            icon.classList.remove('up');
+            icon.classList.remove('big');
+        }
+
+        icons.forEach(icon => icon.addEventListener('mouseenter', () => icon.classList.add('up')));
+        icons.forEach(icon => icon.addEventListener('mouseleave', () => mouseLeave(icon)));
+
+        icons.forEach(icon => icon.addEventListener('mousedown', () => icon.classList.add('big')));
+        icons.forEach(icon => icon.addEventListener('mouseup', () => mouseLeave(icon)));
+
+    </script>
+</body>
+
+</html>
